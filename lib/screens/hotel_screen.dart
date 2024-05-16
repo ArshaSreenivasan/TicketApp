@@ -10,7 +10,7 @@ class HotelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
-    print('hotel price is ${hotel['Price']}');
+    // print('hotel price is ${hotel['price']}');
     return Container(
         width: size.width * 0.6,
         height: 350,
@@ -34,27 +34,27 @@ class HotelScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Styles.primaryColor,
-                image: const DecorationImage(
+                image:  DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    "assets/hotel1.jpeg",
+                    "assets/${hotel['image']}",
                   ),
                 ),
               ),
             ),
             const Gap(10),
             Text(
-              "open Space",
+              hotel['place'],
               style: Styles.headLineStyle2.copyWith(color: Styles.kakicolor),
             ),
-            const Gap(15),
+            const Gap(5),
             Text(
-              "London",
+              hotel['destination'],
               style: Styles.headLineStyle3.copyWith(color: Colors.white),
             ),
             const Gap(8),
             Text(
-              "\$40/Night",
+              '\$${hotel['price']}/night',
               style: Styles.headLineStyle.copyWith(color: Styles.kakicolor),
             ),
           ],

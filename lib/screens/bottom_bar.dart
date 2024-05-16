@@ -41,7 +41,7 @@ void _onItemTapped(int index){
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: const Color.fromARGB(255, 12, 65, 107),
-        unselectedItemColor: Color.fromARGB(255, 125, 173, 239),
+        unselectedItemColor: const Color.fromARGB(255, 125, 173, 239),
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(

@@ -74,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                         style: Styles.headLineStyle2),
                     InkWell(
                         onTap: () {
-                          print("object");
+                          // print("object");
                         },
                         child: Text(
                           "View All",
@@ -87,14 +87,15 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          const SingleChildScrollView(
+           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList(),
+              // [
+              //   TicketView(),
+              //   TicketView(),
+              // ],
             ),
           ),
           const Gap(15),
@@ -106,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                 const Text("Hotels", style: Styles.headLineStyle2),
                 InkWell(
                   onTap: () {
-                    print("object");
+                    // print("object");
                   },
                   child: Text(
                     "View All",
