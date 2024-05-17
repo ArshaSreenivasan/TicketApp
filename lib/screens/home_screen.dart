@@ -5,6 +5,7 @@ import 'package:testing/screens/hotel_screen.dart';
 import 'package:testing/screens/ticket_view.dart';
 import 'package:testing/utils/app_info_list.dart';
 import 'package:testing/utils/app_styles.dart';
+import 'package:testing/widgets/Double_text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -66,32 +67,37 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Gap(20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text("Upcoming Flights",
-                        style: Styles.headLineStyle2),
-                    InkWell(
-                        onTap: () {
-                          // print("object");
-                        },
-                        child: Text(
-                          "View All",
-                          style: Styles.textStyle
-                              .copyWith(color: Styles.primaryColor),
-                        ))
-                  ],
-                )
+                const Gap(40),
+                const AppDoubleTextWidget(
+                    bigText: "Upcoming Flights", smallText: "View all")
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     const Text("Upcoming Flights",
+                //         style: Styles.headLineStyle2),
+                //     InkWell(
+                //         onTap: () {
+                //           // print("object");
+                //         },
+                //         child: Text(
+                //           "View All",
+                //           style: Styles.textStyle
+                //               .copyWith(color: Styles.primaryColor),
+                //         ))
+                //   ],
+                // )
               ],
             ),
           ),
           const Gap(15),
-           SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList(),
+              children: ticketList
+                  .map((singleTicket) => TicketView(ticket: singleTicket))
+                  .toList(),
               // [
               //   TicketView(),
               //   TicketView(),
@@ -100,24 +106,25 @@ class HomeScreen extends StatelessWidget {
           ),
           const Gap(15),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Hotels", style: Styles.headLineStyle2),
-                InkWell(
-                  onTap: () {
-                    // print("object");
-                  },
-                  child: Text(
-                    "View All",
-                    style:
-                        Styles.textStyle.copyWith(color: Styles.primaryColor),
-                  ),
-                )
-              ],
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const AppDoubleTextWidget(bigText: "Hotel", smallText: "View all"),
+              //  Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const Text("Hotels", style: Styles.headLineStyle2),
+              //     InkWell(
+              //       onTap: () {
+              //         // print("object");
+              //       },
+              //       child: Text(
+              //         "View All",
+              //         style:
+              //             Styles.textStyle.copyWith(color: Styles.primaryColor),
+              //       ),
+              //     )
+              //   ],
+              // ),
+              ),
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
