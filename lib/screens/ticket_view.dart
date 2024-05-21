@@ -49,8 +49,8 @@ class TicketView extends StatelessWidget {
                       ),
                       // const Spacer(),
                       Expanded(child: Container()),
-                      const ThickContainer(
-                        isColor: true,
+                       ThickContainer(
+                        isColor: isColor,
                       ), // that o icon in front and back of flight icon
                       // const Spacer(),
                       Expanded(
@@ -96,7 +96,7 @@ class TicketView extends StatelessWidget {
                         ]),
                       ),
 
-                      const ThickContainer(isColor: true),
+                       ThickContainer(isColor: isColor),
                       // const Spacer(),
                       Expanded(child: Container()),
 
@@ -230,7 +230,7 @@ class TicketView extends StatelessWidget {
                         firstText: ticket['date'],
                         secondText: "Date",
                         alignment: CrossAxisAlignment.start,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                       // Column(
                       //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,7 +254,7 @@ class TicketView extends StatelessWidget {
                         firstText: ticket['departure_time'],
                         secondText: "Departure Time",
                         alignment: CrossAxisAlignment.center,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                       // Column(
                       //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -278,7 +278,7 @@ class TicketView extends StatelessWidget {
                         firstText: ticket['number'].toString(),
                         secondText: "Number",
                         alignment: CrossAxisAlignment.end,
-                        isColor: false,
+                        isColor: isColor,
                       ),
                       // Column(
                       //   crossAxisAlignment: CrossAxisAlignment.end,
